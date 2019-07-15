@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ACTIONS: customerActions ACTION: GET_FESTIVAL_DATA 1`] = `
+Array [
+  Object {
+    "type": "GET_FESTIVAL_DATA",
+  },
+]
+`;
+
+exports[`REDUCER: FestivalDataReducer GET_FESTIVAL_DATA 1`] = `
+Object {
+  "response": undefined,
+}
+`;
