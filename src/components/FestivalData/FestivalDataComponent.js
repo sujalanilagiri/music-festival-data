@@ -52,8 +52,8 @@ class FestivalDataComponent extends Component {
     if (this.props.response) var data = sortedData(this.props.response);
     return (
       <div>
-        {this.props.response ? (
-          <FestivalData data={data} />
+        {this.props.response ? ( 
+          <FestivalData key="festivalData" data={data} />
         ) : (
           "No Data received from Api to Display"
         )}

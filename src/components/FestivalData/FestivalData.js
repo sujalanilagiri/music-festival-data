@@ -4,10 +4,10 @@ export default function FestivalData (props) {
     const sortedMap = new Map([...mapObject].sort());
     return sortedMap ?[...sortedMap.keys()].map((element,key) =>{   
      return (
-       <ul>
-         <li key={key}>
+       <ul key={key+element}>
+         <li key={"key1"+element}>
              {element}
-             <DisplayArray key={key} arraytoDisplay = {mapObject.get(element)} />
+             <DisplayArray key={key + element} arraytoDisplay = {mapObject.get(element)} />
          </li>
         </ul>
      );
@@ -17,20 +17,20 @@ export default function FestivalData (props) {
    const display = Object.values(props.data).map((d, key) => {
      
         return (
-          <div key={key} >
-            <li key={key}>
+          <div key={key+ d.recordLabel} >
+            <li key={d.recordLabel}>
               {d.recordLabel
               }
             </li>
-            <DisplayMapObject  mapObject={d.bands} />
+            <DisplayMapObject  key={"bands"+ key} mapObject={d.bands} />
           </div>
           );
         });
 
         const DisplayArray = ({arraytoDisplay}) => {
             return arraytoDisplay ?arraytoDisplay.map((element,key) =>{
-           return(  <ul>
-                 <li key={key}>
+           return(  <ul key={key+ element}>
+                 <li key={"bandname"+ element}>
                      {element}
                  </li>
              </ul>
